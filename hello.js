@@ -10,10 +10,26 @@ console.log("circle:", circle)
 console.log("circle.circumference(5):", circle.circumference(5))
 console.log("circle.area(5):", circle.area(5))
 
-var fs = require("fs")
 var figlet = require("figlet")
 figlet("Hello, CS 290!", function (err, data) {
   if (!err) {
     console.log(data);
   }
 })
+
+var fs = require("fs")
+fs.readFile(
+__dirname + "/hello.js", 
+"utf-8",
+function (err, data) {
+  if (!err) {
+    console.log(data)
+    }
+  }
+)
+var contents = fs.readFile(
+__dirname + "/hello.js", 
+"utf-8",
+)
+console.log("This is after fs.readfile()")
+console.log(contents)
